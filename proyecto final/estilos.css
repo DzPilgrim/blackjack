@@ -1,0 +1,200 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f0f0;
+    overflow: hidden;
+}
+.parteSuperior{
+    width: 100vw;
+    height: 50vh;
+    display: flex;
+    flex-direction: column;
+    background-color: black;
+    justify-content:end;
+}
+.parteSuperior img{
+    align-self: center;
+    position: fixed;
+    width: 300px;
+    height: 300px;
+}
+.botones{
+    width: 250px;
+    height: 50px;
+    display: flex;
+    flex-direction: row;
+    background-color: blue;
+    align-self:flex-end;
+}
+.botones button{
+    width: 50%;
+    height: 100%;
+}
+.parteInferior{
+    width: 100vw;
+    height: 50vh;
+    display: flex;
+    flex-direction: row;
+
+}
+.otros{
+    width: 40%;
+    height: 100%;
+    background-color:black;
+    padding:1%;
+    box-sizing: border-box;
+}
+.puntos{
+    width: 40%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+}
+.oponente, .jugador{
+    width: 230px;
+    height:15%;
+    border-bottom: 1px solid white;
+    border-top: 1px solid white ;
+    background: radial-gradient(circle, rgb(14,11,11), rgba(14, 11, 11, 0) );
+    color: white;
+    text-align: center;
+}
+.juego{
+    width: 60%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    box-sizing: border-box;
+    justify-content: space-between;
+}
+
+.manoJugador, .manoOponente{
+    width: 100%;
+    height: 125px;
+    display: flex;
+    flex-direction: row;
+    gap:50px;
+    box-sizing: border-box;
+}
+.carta{
+    width: 80px;
+    height:100%;
+    border-radius: 10px;
+}
+.carta img{
+    border-radius: 3px;
+}
+
+.otros img{
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+}
+.a1,.d1{
+    position: relative;
+    transform-style: preserve-3d;
+    backface-visibility: hidden;
+}
+.caraAtras2,
+.caraAtras1 {
+  backface-visibility: hidden;
+    animation:rotation;
+    }
+.a1 div,.d1 div{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    
+}
+.cara{
+    width: 100%;
+    height: 100%;
+}
+
+
+.animacion1{
+    animation: carta1;
+    animation-duration: 0.5s;
+    animation-direction: normal;
+    box-sizing: border-box;
+    transition: ease-in-out;
+}
+.animacion2{
+    animation: carta2;
+    animation-duration: 0.5s;
+    animation-direction: normal;
+    transition: ease-in-out;
+    box-sizing: border-box;
+    animation-fill-mode: both;
+}
+.animacion3{
+    animation: carta3;
+    animation-duration: 0.5s;
+    animation-direction: normal;
+    transition: ease-in-out;
+    box-sizing: border-box;
+    animation-fill-mode: both;
+}
+
+.animacionVoltear {
+    animation: voltearCarta;
+    animation-duration: 0.1s;
+    animation-direction: normal;
+    animation-fill-mode: both;
+    transition: ease-in-out;
+}
+@keyframes carta1 {
+    0%{
+        transform: translateX(100vw);
+    }
+    100%{
+        transform: translateX(0px);
+        opacity: 100%;
+    }
+    
+}
+@keyframes carta2{
+    0%{
+        transform: translateY(0);
+    }
+    100%{
+        transform: translateY(100vh);
+    }
+}
+@keyframes carta3 {
+    0%{
+    }100%{
+        transform: translateY(0);
+    }
+}
+
+@keyframes voltearCarta{
+    0% {
+        
+    }
+    100% {
+        transform: rotateY(180deg);
+    }
+}
+#mensajeGiro {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    color: #fff;
+    font-size: 24px;
+    text-align: center;
+    padding-top: 20%;
+  }
+  
+@media only screen and (max-width: 600px) {
+    #mensajeGiro {
+      display: block;
+    }
+  }
